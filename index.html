@@ -1,0 +1,259 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Displays</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,900&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: Gidole;
+      src: url(Gidole-Regular.otf);
+    }
+    body {
+      font-family: Gidole ,Helvetica, sans-serif;
+      background-color: rgb(223, 223, 223); 
+    }
+    .container {
+      position: relative;
+      display: grid;
+      /*grid-template-columns: 25% 200px 25%;*/
+      /*grid-template-rows: 300px 150px;*/
+      /*grid-template: filas / columnas ;*/
+      /* grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr); */
+      grid-template-columns: repeat(3, minmax(1fr));
+      grid-template-rows: repeat(2, minmax(1fr));
+      grid-gap: 10px;
+      height: 100vh;
+      /* grid-template-areas: "header header"
+                           "left contenido"
+                           "footer footer"; */
+      grid-template-areas:'hero me about'
+                          'hero map education'
+                          'hero footer footer' ;
+      }   
+    
+      /* 'hero hero hero'
+      'me about about'
+      'map education education'
+      'footer footer' */
+    .item {
+      justify-items: center;
+      vertical-align: center;
+      position: relative;
+      line-height: center;
+      text-align: center;
+      padding: 15px;
+      margin: 10px;
+      border-radius: 3px;
+      background: white;
+      -webkit-box-shadow: 6px 5px 28px 0px rgba(163,161,163,0.83);
+    }
+
+    .hero {
+      flex-wrap: wrap;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      top: 0;
+      left: 0;
+      text-align: left;
+      background-image: url(images/hero.jpg);
+      background-size: cover;
+      max-width: auto;
+      max-height: auto;
+      grid-area: hero;
+      margin-right: 50px;
+      flex-direction: column;
+    }
+    .botones {
+      width: 300px;
+      height: 70px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+    .letras {
+      width: 300px;
+      height: 180px;
+      text-align: left;
+      padding-left: 70px;
+    }
+    .description {
+      padding-left: 30px;
+    }
+    
+    .titulo {
+      grid-area: titulo;
+      font-size: 35px;
+     }
+    .hero img {
+      margin: 0;
+      width: 450px;
+      height: 100vh;
+    }
+    .main_button{
+        font-family: Gidole ,Helvetica, sans-serif;
+        background-color: transparent;
+        width: 30%;
+        padding: 10px;
+        font-size: 1em;
+        color: white;
+        border: 0;
+        cursor: pointer;
+        border-radius: 6px;
+        border: 1px solid white;
+        margin: 5px;
+      }
+
+    .main_button:hover{
+      color: black;
+      background-color: rgba(250,250,250,.6);
+      border: 0;
+    }
+    .me img {
+      margin: 0;
+      width: 300px;
+      height: auto;
+    }
+
+    .me {
+      height: 500px;
+      width: 300px;
+      grid-area: me;
+    }
+    .descipcion-sitio {
+      font-size: 18px;
+      line-height: 25px;
+      margin-left: 30px;
+      text-align: left;
+      color: rgba(128, 128, 128, 0.83); 
+    }
+    .about{
+      height: 500px;
+      width: 600px;
+      grid-area: about;
+    }
+
+    /* .social {
+      margin-top: 50px;
+    } */
+
+    .social-media {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    margin: 0px 10px;
+    margin-top: 20px;
+    background-size: 70px 70px;
+    flex-wrap: wrap;
+    }
+    .social-media.twitter {
+      background-image: url(images/twitter.png); 
+    }
+    .social-media.github {
+      background-image: url(images/github.png); 
+    }
+    .social-media.linkedin {
+      background-image: url(images/linkedin.png); 
+    }
+    .map{
+      padding: 0;
+      margin: 0;
+      height: 300px;
+      width: 450px;
+      grid-area: map;
+    }
+    .education{
+      height: 300px;
+      width: 400px;
+      grid-area: education;
+    }
+    .footer{
+      padding: 0;
+      padding-right: 10px;
+      text-align: end;
+      grid-area: footer;
+    }
+    .form-email {
+    border-color: gray;
+    border-radius: 10px;
+    border-style: solid;
+    padding: 10px 20px 10px 25px;
+    background-image: url(images/email.png);
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 5px;
+    }
+    /* .item:nth-of-type(4) {
+      /* background: blue;
+      overflow: auto; */
+      /* display: subgrid; */
+      /* display: inline-grid; */
+      /* display: grid; */
+      /* grid-template: 50px 50px 50px / 200px 200px 200px; */
+    
+  </style>
+</head>
+<body>
+  <section class="container">
+    <div class="hero item" background="images/hero.jpg">
+     <div class="letras">
+      <h1 class="titulo">Santiago <br>
+        Velasquez</h1>
+        <hr class="description">
+      <p class="description">Welcome to my site</p>
+     </div>
+      <div class="botones">
+        <button class="main_button proj">Projects</button>
+        <button class="main_button git">Github</button>
+      </div>
+    </div>
+    <div class="me item">
+      <img src="images/me.jpg" alt="">
+      <h3>Frontend Developer</h3>
+      <p>Responsive Design</p>
+      <p>CSS grid layout</p>
+      <p>Web animation</p>
+    </div>
+    <div class="about item">
+      <h2>About me</h2>
+      <p class="descipcion-sitio">Hello! I am Santiago Velasquez Frontend developer with 6 months of experience in creation of websites.
+
+        I use the last technologies for the design of websites such as  HTML5, CSS3, and JavaScript. Specializing in landing page design for small business with personalizes themes using libraries like Bootstrap.</p>
+        <br>
+      <h2>This site</h2>
+      <p class="descipcion-sitio">This site was written and built in raw CSS/HTML, without bootstrap and other libraries. For the adjustment of the layout I used CSS grids.
+         For the map I used the Google API and some CSS styles. Fonts used throughout the site are provided by Google Fonts. 
+      </p>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/santiago-andres-velasquez-ayala-428a7a170/" target="_blank" class="social-media linkedin"></a>
+        <a href="https://github.com/Santiagovelasquez0703" target="_blank" class="social-media github"></a>
+        <a href="https://twitter.com/Santiago_0703" target="_blank" class="social-media twitter"></a>
+      </div>  
+    </div>
+    <div class="map item">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8144344.1253461065!2d-78.83519893680645!3d4.642084321228542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e15a43aae1594a3%3A0x9a0d9a04eff2a340!2sColombia!5e0!3m2!1ses!2sco!4v1580517228891!5m2!1ses!2sco" width="450" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+        <!-- <form action="mailto:santiago_velasquez@outlook.com" class="formulario">
+        <h3 class="contacto">Contact</h3>
+        <input type="email" placeholder="Contáctame aquí" id="pero"  class="form-email">
+        <button class="boton">Send</button>
+    </form> -->
+    </div>
+    <div class="education item">
+      <h2>Education</h2>
+      <p class="descipcion-sitio">2018-2019: Curso de Desarrollo web online.</p>
+      <p class="descipcion-sitio">2019-2019: Curso de Responsive design.</p>
+      <p class="descipcion-sitio">2020-2020: Curso de HTML y CSS.</p>
+      <p class="descipcion-sitio">2020-2020: Curso de Animaciones para la web.</p>
+      <p class="descipcion-sitio">2020-2020: Curso de CSS grid layout.</p>
+    </div>
+    <footer class="footer item">
+      <p>© Santiago Velasquez 2020</p>
+    </footer>
+  </section>
+</body>
+</html>
